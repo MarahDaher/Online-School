@@ -1,7 +1,20 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { MainComponent } from './shared/components/main/main.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule),
+      },
+    ]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
