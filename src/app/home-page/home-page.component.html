@@ -3,17 +3,17 @@
         <div class="row align-items-center justify-content-center h-100">
             <div class="col-lg-6">
                 <div class="main-banner-content">
-                    <span>Play, Learn and Grow</span>
-                    <h1>We are a Childcare Professional</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                    <!-- <span>{{ 'intro1' | translate }}</span> -->
+                    <h1>{{ 'intro2' | translate }}</h1>
+                    <p>{{ 'intro3' | translate }}.</p>
 
                     <div class="banner-btn">
-                        <a href="#" class="default-btn">
-                            Learn More
+                        <a href="#" class="default-btn m-2">
+                            {{ 'LearnMore' | translate }}
                         </a>
-                        <a href="#" class="optional-btn">
+                        <!-- <a href="#" class="optional-btn m-2">
                             Find Out More
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
@@ -54,13 +54,13 @@
 
             <div class="col-lg-6">
                 <div class="who-we-are-image-wrap text-center">
-                    <img src="assets/img/who-we-are/2.jpg" alt="image" width="400px">
+                    <img src="assets/img/who-we-are/1.jpg" alt="image" width="400px">
                 </div>
             </div>
 
             <div class="col-lg-6">
                 <div class="who-we-are-content">
-                    <span>Who We Are</span>
+                    <!-- <span>Who We Are</span> -->
                     <h3>Learn About Our Work and Cultural Activities</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -88,8 +88,8 @@
 <section class="class-area pt-100 pb-70 mt-5">
     <div class="container mt-5">
         <div class="section-title">
-            <span>Classes</span>
-            <h2>Popular Classes</h2>
+            <span>{{'Lessons' | translate}}</span>
+            <h2>{{'LearnWithus' | translate}}</h2>
         </div>
 
         <div class="row">
@@ -102,29 +102,26 @@
                     </div>
 
                     <div class="class-content">
-                        <div class="price">$880</div>
+                        <!-- <div class="price">$880</div> -->
                         <h3>
-                            <a href="#">Color Matching</a>
+                            <a href="#">{{'Class1' | translate}}</a>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>{{'Class1Desc' | translate}}</p>
 
-                        <ul class="class-list">
+                        <!-- <ul class="class-list">
                             <li>
-                                <span>Age:</span>
-                                3-5 Year
+                                <span>Age:</span> 3-5 Year
                             </li>
                             <li>
-                                <span>Time:</span>
-                                8-10 AM
+                                <span>Time:</span> 8-10 AM
                             </li>
                             <li>
-                                <span>Seat:</span>
-                                25
+                                <span>Seat:</span> 25
                             </li>
-                        </ul>
+                        </ul> -->
 
                         <div class="class-btn">
-                            <a href="#" class="default-btn">Join Class</a>
+                            <a href="#" class="default-btn">{{'JoinClass' | translate}}</a>
                         </div>
                     </div>
                 </div>
@@ -139,29 +136,26 @@
                     </div>
 
                     <div class="class-content">
-                        <div class="price">$790</div>
+                        <!-- <div class="price">$790</div> -->
                         <h3>
-                            <a href="#">Learning Disciplines</a>
+                            <a href="#">{{'Class2' | translate}}</a>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>{{'Class2Desc' | translate}}</p>
 
-                        <ul class="class-list">
+                        <!-- <ul class="class-list">
                             <li>
-                                <span>Age:</span>
-                                3-5 Year
+                                <span>Age:</span> 3-5 Year
                             </li>
                             <li>
-                                <span>Time:</span>
-                                8-10 AM
+                                <span>Time:</span> 8-10 AM
                             </li>
                             <li>
-                                <span>Seat:</span>
-                                25
+                                <span>Seat:</span> 25
                             </li>
-                        </ul>
+                        </ul> -->
 
                         <div class="class-btn">
-                            <a href="#" class="default-btn">Join Class</a>
+                            <a href="#" class="default-btn">{{'JoinClass' | translate}}</a>
                         </div>
                     </div>
                 </div>
@@ -204,12 +198,10 @@
                                 </h3>
                                 <ul class="event-list">
                                     <li>
-                                        <i class="bx bx-time"></i>
-                                        8:00 AM - 10:00 PM
+                                        <i class="bx bx-time"></i> 8:00 AM - 10:00 PM
                                     </li>
                                     <li>
-                                        <i class="bx bxs-map"></i>
-                                        New York 56 Glassford Street Glasgow
+                                        <i class="bx bxs-map"></i> New York 56 Glassford Street Glasgow
                                     </li>
                                 </ul>
                             </div>
@@ -241,12 +233,10 @@
                                 </h3>
                                 <ul class="event-list">
                                     <li>
-                                        <i class="bx bx-time"></i>
-                                        8:00 AM - 10:00 PM
+                                        <i class="bx bx-time"></i> 8:00 AM - 10:00 PM
                                     </li>
                                     <li>
-                                        <i class="bx bxs-map"></i>
-                                        New York 56 Glassford Street Glasgow
+                                        <i class="bx bxs-map"></i> New York 56 Glassford Street Glasgow
                                     </li>
                                 </ul>
                             </div>

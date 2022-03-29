@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class UtilityService {
   public route: Router;
   public translate: TranslateService;
-  public textDir: string = 'ltr';
+  public textDir: string = 'rtl';
 
 
   constructor(
@@ -18,7 +18,7 @@ export class UtilityService {
     this.translate = injector.get(TranslateService);
 
 
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('ar');
     this.translate.onLangChange.subscribe((event) =>
     {      
       if(event?.lang == 'ar')

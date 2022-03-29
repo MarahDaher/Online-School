@@ -1,10 +1,16 @@
 <!-- <span [dir]="utility.textDir">
     <router-outlet></router-outlet>
 </span> -->
-
-
 <div class="loading-overlay" *ngIf="loading">
-    Loading<span class="d">.</span><span class="d d-2">.</span><span class="d d-3">.</span>
+    <div class="spinner">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
 </div>
 
 <div *ngIf="!loading" [dir]="utility.textDir">

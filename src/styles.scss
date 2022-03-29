@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+body {
+    font-family: 'Tajawal', sans-serif;
+}
 
 body::-webkit-scrollbar {
     width: 6px;

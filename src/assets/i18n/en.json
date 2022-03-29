@@ -1,5 +1,21 @@
 {
     "HomePage": "Home",
     "Teacher": "Teacher",
-    "Lessons": "Lessons"
+    "Lessons": "Lessons",
+
+
+    "intro1": "Play, Learn and Grow",
+    "intro2": "We are a Child Learn Professional",
+    "intro3": "An educational site for children that tends to provide educational content in an interesting and useful cartoon format, and this ensures the best assimilation of children in addition to ensuring the maximum limits of concentration.",
+    "LearnMore": "Learn More",
+
+
+    "LearnWithus": "Popular Classes",
+
+    "Class1": "Arabic",
+    "Class1Desc": "Various lessons in the Arabic language in an entertaining and enjoyable way, the aim of which is to teach children Arabic letters with words through cute cartoon characters.",
+    "Class2": "الحســاب الذهنــي",
+
+    "JoinClass": "Join Class"
+
 }
