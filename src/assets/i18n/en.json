@@ -24,5 +24,8 @@
     "Teacher1": "Mr Alam",
     "Teacher2": "Ms Lama",
     "OurCoreTeacher": "Our Core Teacher",
-    "OurExpertTeacher": "Our Expert Teacher"
+    "OurExpertTeacher": "Our Expert Teacher",
+    "Login": "Login",
+    "UserName": "User Name",
+    "Password": "Password"
 }

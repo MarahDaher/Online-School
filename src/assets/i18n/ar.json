@@ -2,7 +2,7 @@
     "HomePage": "الصفحة الرئيسية",
     "Teacher": "المعلمون",
     "Lessons": "الدروس",
-    "WhyChooseUs": "لماذا تختارنــا",
+    "WhyChooseUs": "لماذا نحــن",
     "OurCoreValues": "قيمنــا الجوهريــة",
     "HappyEnvironment": "بيئــة سعيدة",
     "CreativeActivities": "أنشطــة إبداعيــة",
@@ -24,5 +24,8 @@
     "Teacher1": "الأستاذ عَلــم",
     "Teacher2": "الانســة لمعــة",
     "OurCoreTeacher": "تعرف على أساتذتنــا",
-    "OurExpertTeacher": "أساتذة خبراء"
+    "OurExpertTeacher": "أساتذة خبراء",
+    "Login": "تسجيــل الدخــول",
+    "UserName": "اســم المستخــدم",
+    "Password": "كلمــة المرور"
 }

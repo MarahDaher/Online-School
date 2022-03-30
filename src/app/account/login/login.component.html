@@ -1,0 +1,34 @@
+<div class="wrapper" style="background-image: linear-gradient(to left bottom, #ea512e, #e05e3f, #d6694f, #ca735e, #bc7c6d);">
+    <div class="inner" data-aos="fade-up" data-aos-duration="3000">
+        <form action="" class="row d-block " [formGroup]="loginForm">
+            <div class="col">
+                <h3 class="w-100 text-dark mx-1">{{ 'Login' | translate}}</h3>
+            </div>
+            <div class="col mt-3">
+                <nz-form-item class="d-block mx-1">
+                    <nz-form-label nzRequired>{{ 'UserName' | translate}}</nz-form-label>
+                    <nz-form-control nzValidatingTip="Validating... ">
+                        <input nz-input formControlName="username" [placeholder]="'UserName' | translate" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <div class="col">
+                <nz-form-item class="d-block mx-1">
+                    <nz-form-label nzRequired>{{ 'Password' | translate}}</nz-form-label>
+                    <nz-form-control nzValidatingTip="Validating... ">
+                        <input type='password' nz-input formControlName="password" [placeholder]="'Password' | translate" />
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <div class="col text-center">
+                <button class='mx-2' nz-button nzType="text" [disabled]='loginForm.invalid' [nzLoading]='loading' nzType="primary" (click)="submitform(loginForm.value)">Login</button>
+
+                <button class='mx-2' nz-button nzType="text" nzType="dashed" [routerLink]="['/account/register/user']">Register</button>
+                <button class='m-2' nz-button nzType="text" nzType="dashed" [routerLink]="['/account/register/shop']">Register New Shop</button>
+            </div>
+
+        </form>
+    </div>
+</div>
