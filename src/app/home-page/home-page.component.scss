@@ -235,7 +235,79 @@ a {
 }
 
 
+/*----------------------choose-area------------------*/
+
+.single-choose {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.single-choose .icon {
+    margin-bottom: 20px;
+}
+
+.single-choose .icon i {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    background-color: #ea512e;
+    color: #ffffff;
+    font-size: 35px;
+    border-radius: 50px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.bx-bulb:before {
+    content: "\e9bc";
+}
+
+.single-choose .content h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.choose-image {
+    position: relative;
+}
+
+.choose-image .choose-image-shape .shape-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-animation: moveLeftBounce 3s linear infinite;
+    animation: moveLeftBounce 3s linear infinite;
+}
+
+.choose-image .choose-image-shape .shape-2 {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+    -webkit-animation: moveLeftBounce 3s linear infinite;
+    animation: moveLeftBounce 3s linear infinite;
+    z-index: -1;
+}
+
+.choose-image .choose-image-shape .shape-3 {
+    position: absolute;
+    bottom: 10%;
+    left: 12%;
+    z-index: -1;
+    -webkit-animation: moveLeftBounce 3s linear infinite;
+    animation: moveLeftBounce 3s linear infinite;
+}
+
+
 /*----------------------class-area------------------*/
+
+.bg-fdf6ed {
+    background-color: #fdf6ed;
+}
 
 .class-area {
     position: relative;
@@ -464,7 +536,7 @@ a {
     border-radius: 50px;
     text-align: center;
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -487,12 +559,12 @@ a {
 }
 
 .single-facilities .facilities-content {
-    padding-left: 88px;
+    padding-right: 88px;
 }
 
 .single-facilities .facilities-content h3 {
     font-size: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 80px;
 }
 
 .single-facilities .facilities-content h3 a {
@@ -560,6 +632,60 @@ a {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     z-index: -1;
+}
+
+
+/*----------------------Teachers------------------*/
+
+.single-teacher-box {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.single-teacher-box .image {
+    position: relative;
+}
+
+.single-teacher-box .image .social {
+    padding-left: 0;
+    list-style-type: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+.single-teacher-box .image .social li {
+    display: inline-block;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    opacity: 0;
+    visibility: hidden;
+    margin: 0 2px;
+}
+
+.single-teacher-box .content {
+    margin-top: 25px;
+}
+
+.single-teacher-box .content h3 {
+    margin-bottom: 0;
+    font-size: 25px;
+}
+
+.single-teacher-box .content span {
+    display: block;
+    color: #ea512e;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 600;
 }
 
 

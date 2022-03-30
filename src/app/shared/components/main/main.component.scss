@@ -9,10 +9,10 @@
 }
 
 .navbar-nav .nav-link {
-    color: black  !important;
+    color: black !important;
 }
 
-.nav-item{
+.nav-item {
     text-align: center !important;
 }
 
@@ -45,4 +45,12 @@ a {
 
 .navbar-collapse {
     align-items: end;
+}
+
+#footer {
+    padding: 0 7%;
+    background-size: cover;
+    color: white;
+    background: black;
+    height: 200px;
 }
