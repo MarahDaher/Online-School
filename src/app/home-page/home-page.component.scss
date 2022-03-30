@@ -23,6 +23,10 @@ a {
     padding-top: 70px;
 }
 
+p {
+    font-size: 20px;
+}
+
 
 /*----------------------Main Banner------------------*/
 
@@ -419,7 +423,7 @@ a {
 
 /*----------------------class-area------------------*/
 
-.event-area.bg-ffffff {
+.bg-ffffff {
     background-image: url(/assets/img/events/event1.jpg);
     background-position: center center;
     background-size: cover;
@@ -429,7 +433,7 @@ a {
     z-index: 1;
 }
 
-.event-area.bg-ffffff::before {
+.bg-ffffff::before {
     position: absolute;
     content: "";
     height: 100%;

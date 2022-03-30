@@ -9,7 +9,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'register/:type',
+    path: 'register',
     component: RegisterComponent,
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
