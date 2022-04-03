@@ -1,1 +1,83 @@
-<p>lessons works!</p>
+<section class="lessons pt-100 pb-70 mb-5">
+    <div class="container h-100">
+        <div class="row align-items-center justify-content-center h-100">
+
+            <div class="col-lg-6">
+                <div class="lessons-image-wrap text-center">
+                    <img src="assets/img/pic/school1.jpg" alt="image" width="700px">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="lessons-content">
+                    <h1>{{ 'StartLesson' | translate}}</h1>
+                    <p>{{ 'JoinDescription' | translate}}</p>
+                    <div class="lessons-btn">
+                        <a [routerLink]="'/account/register'" class="default-btn">{{ 'JoinClass' | translate}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="class-area bg-ffffff pt-100 pb-70 mt-sm-5">
+    <div class="container">
+        <div class="section-title">
+            <span class="text-dark" style="font-size: 20px;">{{'Lessons' | translate}}</span>
+            <h2 class="text-dark">{{'LearnWithus' | translate}}</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="single-class card shadow">
+                    <div class="class-image">
+                        <a href="#">
+                            <img src="assets/img/classes/12.png" alt="image">
+                        </a>
+                    </div>
+
+                    <div class="class-content">
+                        <h3>
+                            <a href="#">{{'Class1' | translate}}</a>
+                        </h3>
+                        <p>{{'Class1Desc' | translate}}</p>
+                        <div class="class-btn">
+                            <a href="#" class="default-btn">{{'JoinClass' | translate}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="single-class card shadow">
+                    <div class="class-image">
+                        <a href="#">
+                            <img src="assets/img/classes/cls1.png" alt="image">
+                        </a>
+                    </div>
+
+                    <div class="class-content">
+                        <h3>
+                            <a href="#">{{'Class2' | translate}}</a>
+                        </h3>
+                        <p>{{'Class2Desc' | translate}}</p>
+                        <div class="class-btn">
+                            <a href="#" class="default-btn">{{'JoinClass' | translate}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="class-shape d-none d-md-block">
+        <div class="shape-1">
+            <img src="assets/img/classes/class-shape-1.png" alt="image">
+        </div>
+        <div class="shape-2">
+            <img src="assets/img/classes/class-shape-2.png" alt="image">
+        </div>
+    </div>
+</section>

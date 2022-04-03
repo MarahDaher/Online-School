@@ -12,6 +12,10 @@ const routes: Routes = [
         pathMatch: 'full',
         loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule),
       },
+      {
+        path: 'lessons',
+        loadChildren: () => import('./lessons/lessons.module').then(m => m.LessonsModule),
+      },
     ]
   },
   {
