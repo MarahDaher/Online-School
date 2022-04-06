@@ -1,8 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 import { BaseComponent } from './shared/components/base.component';
-
-
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +23,8 @@ export class AppComponent extends BaseComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
   }
 
   // Shows and hides the loading spinner during RouterEvent changes

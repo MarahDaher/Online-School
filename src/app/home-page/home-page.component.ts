@@ -9,7 +9,7 @@ import { BaseComponent } from '../shared/components/base.component';
 export class HomePageComponent extends BaseComponent implements OnInit {
 
   constructor(
-    injector: Injector
+    injector: Injector,
   ) {
     super(injector);
   }

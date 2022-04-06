@@ -33,18 +33,18 @@
             <div class="col-lg-6 col-md-6">
                 <div class="single-class card shadow">
                     <div class="class-image">
-                        <a href="#">
+                        <a>
                             <img src="assets/img/classes/12.png" alt="image">
                         </a>
                     </div>
 
                     <div class="class-content">
                         <h3>
-                            <a href="#">{{'Class1' | translate}}</a>
+                            <a>{{'Class1' | translate}}</a>
                         </h3>
                         <p>{{'Class1Desc' | translate}}</p>
                         <div class="class-btn">
-                            <a href="#" class="default-btn">{{'JoinClass' | translate}}</a>
+                            <a [routerLink]="['lesson-details']" class="default-btn">{{'JoinClass' | translate}}</a>
                         </div>
                     </div>
                 </div>
@@ -60,11 +60,11 @@
 
                     <div class="class-content">
                         <h3>
-                            <a href="#">{{'Class2' | translate}}</a>
+                            <a>{{'Class2' | translate}}</a>
                         </h3>
                         <p>{{'Class2Desc' | translate}}</p>
                         <div class="class-btn">
-                            <a href="#" class="default-btn">{{'JoinClass' | translate}}</a>
+                            <a [routerLink]="['lesson-details']" class="default-btn">{{'JoinClass' | translate}}</a>
                         </div>
                     </div>
                 </div>
