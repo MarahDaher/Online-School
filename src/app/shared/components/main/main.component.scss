@@ -8,6 +8,33 @@
     z-index: 100;
 }
 
+.bg-sred {
+    background: #d94443;
+}
+
+@media (max-width: 576px) {
+    #header {
+        background-color: #ffeec0;
+        padding: 0 5%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    .navbar-nav .nav-link {
+        color: black !important;
+        font-size: 15px;
+        font-weight: 700;
+    }
+    .navbar-nav .nav-link.active {
+        // color: #faf2f2 !important;
+        // background-color: black !important;
+        border-radius: 4px !important;
+        border-bottom: 5px solid black;
+    }
+}
+
 .navbar-nav .nav-link {
     color: gray !important;
     font-size: 15px;
@@ -56,4 +83,8 @@ a {
     color: white;
     background: #d94443;
     height: 200px;
+}
+
+.pt-100 {
+    padding-top: 50px;
 }
