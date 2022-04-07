@@ -35,19 +35,19 @@ export class AppComponent extends BaseComponent implements OnInit{
     if (event instanceof NavigationEnd) {
       setTimeout(() => { // here
         this.loading = false;
-      }, 2000);
+      }, 1000);
     }
 
     // Set loading state to false in both of the below events to hide the spinner in case a request fails
     if (event instanceof NavigationCancel) {
       setTimeout(() => { // here
         this.loading = false;
-      }, 2000);
+      }, 1000);
     }
     if (event instanceof NavigationError) {
       setTimeout(() => { // here
         this.loading = false;
-      }, 2000);
+      }, 1000);
     }
   }
 }
