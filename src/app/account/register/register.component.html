@@ -1,1 +1,72 @@
-<p>register works!</p>
+<div class="bg">
+    <div class="materialContainer">
+        <div class="box">
+            <div class="title text-sred pb-3">{{ 'Register' | translate}}</div>
+            <form action="" class="row d-flex " [formGroup]="registerForm">
+                <div class="col-4 mt-3">
+                    <nz-form-item class="d-block mx-1">
+                        <nz-form-label nzRequired>{{ 'FirstName' | translate}}</nz-form-label>
+                        <nz-form-control nzValidatingTip="Validating... ">
+                            <input nz-input formControlName="username" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="col-4 mt-3">
+                    <nz-form-item class="d-block mx-1">
+                        <nz-form-label nzRequired>{{ 'MiddleName' | translate}}</nz-form-label>
+                        <nz-form-control nzValidatingTip="Validating... ">
+                            <input nz-input formControlName="middleName" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="col-4 mt-3">
+                    <nz-form-item class="d-block mx-1">
+                        <nz-form-label nzRequired>{{ 'LastName' | translate}}</nz-form-label>
+                        <nz-form-control nzValidatingTip="Validating... ">
+                            <input nz-input formControlName="lastName" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="col-6 mt-3">
+                    <nz-form-item class="d-block mx-1">
+                        <nz-form-label nzRequired>{{ 'BirthDay' | translate}}</nz-form-label>
+                        <nz-form-control nzValidatingTip="Validating... ">
+                            <input nz-input formControlName="lastName" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="col-6 mt-3">
+                    <nz-form-item class="d-block mx-1">
+                        <nz-form-label nzRequired>{{ 'CountryId' | translate}}</nz-form-label>
+                        <nz-form-control nzValidatingTip="Validating... ">
+                            <input nz-input formControlName="lastName" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="col-12 mt-3">
+                    <nz-form-item class="d-block mx-1">
+                        <nz-form-label nzRequired>{{ 'Email' | translate}}</nz-form-label>
+                        <nz-form-control nzValidatingTip="Validating... ">
+                            <input nz-input formControlName="lastName" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="col-12 mt-3">
+                    <nz-form-item class="d-block mx-1">
+                        <nz-form-label nzRequired>{{ 'Password' | translate}}</nz-form-label>
+                        <nz-form-control nzValidatingTip="Validating... ">
+                            <input type='password' nz-input formControlName="password" />
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="col text-center mt-4">
+                    <a href=" # " class="default-btn m-2 " (click)="submitform(registerForm.value)">
+                        {{ 'RegisterBtn' | translate }}
+                    </a>
+                    <!-- <button class='mx-2' nz-button nzType="text" [disabled]='loginForm.invalid' [nzLoading]='loading' nzType="primary" (click)="submitform(loginForm.value)" >Login</button> -->
+                </div>
+            </form>
+            <!-- <a href="" class="pass-forgot">Forgot your password?</a> -->
+        </div>
+    </div>
+</div>

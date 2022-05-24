@@ -30,5 +30,15 @@
     "Password": "كلمــة المرور",
     "StartLesson": "الدروس التعليميــة",
     "AboutUs": "من نحن",
-    "Contact": "تواصل معنا"
+    "Contact": "تواصل معنا",
+    "StudentProfile": "الصفحة الشخصية",
+    "Register": "إنشاء حساب",
+
+    "FirstName": "الاسم",
+    "MiddleName": "اسم الأب",
+    "LastName": "الكنيــة",
+    "BirthDay": "تاريخ الميلاد",
+    "CountryId": "البلــد",
+    "Email": "الإيميــل",
+    "RegisterBtn": "التسجيـــل"
 }

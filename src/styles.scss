@@ -24,3 +24,77 @@ body::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
 }
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: white !important;
+}
+
+.default-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #ea512e;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.default-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #f5890d;
+    z-index: -1;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.default-btn1 {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #f9ba60;
+    color: white;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.default-btn1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #f5890d;
+    z-index: -1;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}

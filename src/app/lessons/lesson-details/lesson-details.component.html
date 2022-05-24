@@ -1,14 +1,14 @@
-<section class="class-details-area pt-100 pb-70">
+<!-- <section class="class-details-area pt-100 pb-70">
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-lg-8 col-md-12">
                 <div class="class-details-desc">
-                    <div class="class-desc-image">
+                    <div class="class-desc-image text-center">
                         <img src="assets/img/classes/12.png" alt="image">
                     </div>
 
                     <div class="tab class-details-tab">
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="col-lg-12 col-md-12">
                                 <ul class="tabs active">
                                     <li class="current">
@@ -209,6 +209,90 @@
                         <div id="validator-newsletter" class="form-result"></div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="pt-100 pb-70">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="class-description">
+                    <h1>
+                        اللغـــة العربيــــة
+                    </h1>
+                    <h3 class="mt-4">
+                        لغـــةٌ إذا وقَعَـــت على أسماعنا كانت لنا برداً على الأكبـــاد
+                    </h3>
+
+                    <h3 class="text-center mt-4">إنهــا لغــةُ الضــاد اللغــةُ العربيّــة</h3>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="class-desc-image text-center">
+                    <img src="assets/img/classes/12.png" alt="image">
+                </div>
+            </div>
+        </div>
+
+        <div style="position: relative;">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h3 class="text-center">سيتــم إعطاء المادة على عدة مراحـــل</h3>
+                </div>
+                <div class="row class-list">
+                    <div class="col-md-6 mt-5" *ngFor="let class of classList">
+                        <div class="card p-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="single-facilities ">
+                                        <div class="number">
+                                            <span>{{class?.number}}</span>
+                                        </div>
+                                        <div class="facilities-content ">
+                                            <h3 class="number">
+                                                <h3>{{class?.title}} :</h3>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <h6> {{ class?.desc}}
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-shape d-none d-md-block ">
+                    <div class="shape-1" style="animation-delay:3.5s">
+                        <img src="assets/img/classes/value-shape-1.png " alt="image ">
+                    </div>
+                    <div class="shape-2" style="animation-delay:3.5s">
+                        <img src="assets/img/classes/value-shape-2.png " alt="image ">
+                    </div>
+                    <div class="shape-3">
+                        <img src="assets/img/classes/value-shape-3.png " alt="image ">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-md-12 mt-5">
+                <h3 class="text-center">سيتخلل هذه المراحل فقرات يعرض فيها أناشيــد عن اللغــة العربيـــة أو فقرات مسرحيــة تعلم حروف اللغة أو غيرها من دروس اللغة</h3>
+                <h3 class="text-center my-5">
+                    أتمنى منكــم المتابعة لنحصل على جيل متقنٍ للغة الأجداد و الاباء فهم خير خَلــف لخير سلــف.
+                </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a class="default-btn">
+                    قم بالتسجيل الان
+                </a>
             </div>
         </div>
     </div>
