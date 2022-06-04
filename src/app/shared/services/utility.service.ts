@@ -1,14 +1,16 @@
 import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';  
-
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilityService {
   public route: Router;
   public translate: TranslateService;
-  public textDir: string = 'rtl';
+  public textDir: any = 'rtl';
+  public notification :NzNotificationService
 
 
   constructor(
@@ -16,6 +18,7 @@ export class UtilityService {
     ) {
     this.route = injector.get(Router);
     this.translate = injector.get(TranslateService);
+    this.notification = injector.get(NzNotificationService);
 
 
     this.translate.setDefaultLang('ar');

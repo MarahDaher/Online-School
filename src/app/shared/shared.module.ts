@@ -10,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [
   ],
   imports: [
+    AppNgZorroAntdModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -19,7 +20,8 @@ import { TranslateModule } from '@ngx-translate/core';
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    AppNgZorroAntdModule
   ]
 })
 export class SharedModule { }

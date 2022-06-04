@@ -2,12 +2,12 @@
     <div class="materialContainer">
         <div class="box">
             <div class="title text-sred pb-3">{{ 'Login' | translate}}</div>
-            <form action="" class="row d-block " [formGroup]="loginForm">
+            <form class="row d-block " [formGroup]="loginForm">
                 <div class="col mt-3">
                     <nz-form-item class="d-block mx-1">
                         <nz-form-label nzRequired>{{ 'UserName' | translate}}</nz-form-label>
                         <nz-form-control nzValidatingTip="Validating... ">
-                            <input nz-input formControlName="username" />
+                            <input nz-input formControlName="email" />
                         </nz-form-control>
                     </nz-form-item>
                 </div>
@@ -20,7 +20,7 @@
                     </nz-form-item>
                 </div>
                 <div class="col text-center mt-4">
-                    <a href=" # " class="default-btn m-2 " (click)="submitform(loginForm.value)">
+                    <a  class="default-btn m-2 " (click)="submitform(loginForm.value)">
                         {{ 'Login' | translate }}
                     </a>
                     <!-- <button class='mx-2' nz-button nzType="text" [disabled]='loginForm.invalid' [nzLoading]='loading' nzType="primary" (click)="submitform(loginForm.value)" >Login</button> -->

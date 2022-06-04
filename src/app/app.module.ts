@@ -16,6 +16,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(en);
 
@@ -37,7 +39,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     IconsProviderModule,
     NzLayoutModule,
     NzMenuModule,
-
+    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -49,6 +51,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
   ],
   bootstrap: [AppComponent]
 })

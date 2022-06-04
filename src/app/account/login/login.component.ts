@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProxyService } from 'src/app/proxy/proxy.service';
 import { BaseComponent } from 'src/app/shared/components/base.component';
 
 @Component({
@@ -14,10 +15,11 @@ export class LoginComponent  extends BaseComponent implements OnInit {
   constructor(
     injector :Injector,
     private _formBuilder: FormBuilder,
+    private proxyService:ProxyService
   ) { 
     super(injector);
     this.loginForm = this._formBuilder.group({
-      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
       password: ['', Validators.required]
     });
   }
@@ -28,7 +30,16 @@ export class LoginComponent  extends BaseComponent implements OnInit {
 
   submitform(form : any){
     this.loading = true
-    this.utility.route.navigate(['/']);
+    this.proxyService.login(form).subscribe(res=>{
+      this.AuthService.setToken(res.token)
+      this.AuthService.setUserName(form.email)
+     // this.utility.route.navigate(['/']);
+      console.log(this.AuthService.isOwner())
+      this.loading = false
+    },()=>{
+      this.utility.notification.error('Login','userName or Password error')
+      this.loading = false
+    })
   }
 
 }
