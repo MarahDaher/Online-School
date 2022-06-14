@@ -11,7 +11,7 @@ export class UtilityService {
   public translate: TranslateService;
   public textDir: any = 'rtl';
   public notification :NzNotificationService
-
+  public urlApi = 'https://test-nest123.herokuapp.com';
 
   constructor(
     injector: Injector

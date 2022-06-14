@@ -7,7 +7,7 @@
                     <nz-form-item class="d-block mx-1">
                         <nz-form-label nzRequired>{{ 'FirstName' | translate}}</nz-form-label>
                         <nz-form-control nzValidatingTip="Validating... ">
-                            <input nz-input formControlName="username" />
+                            <input nz-input formControlName="firstName" />
                         </nz-form-control>
                     </nz-form-item>
                 </div>
@@ -31,7 +31,7 @@
                     <nz-form-item class="d-block mx-1">
                         <nz-form-label nzRequired>{{ 'BirthDay' | translate}}</nz-form-label>
                         <nz-form-control nzValidatingTip="Validating... ">
-                            <input nz-input formControlName="lastName" />
+                            <input nz-input formControlName="dateBirth" />
                         </nz-form-control>
                     </nz-form-item>
                 </div>
@@ -39,7 +39,7 @@
                     <nz-form-item class="d-block mx-1">
                         <nz-form-label nzRequired>{{ 'CountryId' | translate}}</nz-form-label>
                         <nz-form-control nzValidatingTip="Validating... ">
-                            <input nz-input formControlName="lastName" />
+                            <input nz-input formControlName="countryId" />
                         </nz-form-control>
                     </nz-form-item>
                 </div>
@@ -47,7 +47,7 @@
                     <nz-form-item class="d-block mx-1">
                         <nz-form-label nzRequired>{{ 'Email' | translate}}</nz-form-label>
                         <nz-form-control nzValidatingTip="Validating... ">
-                            <input nz-input formControlName="lastName" />
+                            <input type='email' nz-input formControlName="email" placeholder="email@example.com" />
                         </nz-form-control>
                     </nz-form-item>
                 </div>
@@ -60,7 +60,7 @@
                     </nz-form-item>
                 </div>
                 <div class="col text-center mt-4">
-                    <a href=" # " class="default-btn m-2 " (click)="submitform(registerForm.value)">
+                    <a class="default-btn m-2 " (click)="submitform(registerForm.value)">
                         {{ 'RegisterBtn' | translate }}
                     </a>
                     <!-- <button class='mx-2' nz-button nzType="text" [disabled]='loginForm.invalid' [nzLoading]='loading' nzType="primary" (click)="submitform(loginForm.value)" >Login</button> -->

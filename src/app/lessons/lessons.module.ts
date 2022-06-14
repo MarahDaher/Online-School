@@ -5,12 +5,11 @@ import { SharedModule } from '../shared/shared.module';
 import { LessonsRoutingModule } from './lessons-routing.module';
 import { LessonDetailsComponent } from './lesson-details/lesson-details.component';
 
-
-
 @NgModule({
   declarations: [
     LessonsComponent,
-    LessonDetailsComponent
+    LessonDetailsComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -18,7 +17,7 @@ import { LessonDetailsComponent } from './lesson-details/lesson-details.componen
     LessonsRoutingModule
   ],
   exports:[
-    LessonDetailsComponent
+    LessonDetailsComponent,
   ]
 })
 export class LessonsModule { }

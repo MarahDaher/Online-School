@@ -1,0 +1,20 @@
+.pb-70 {
+    padding-bottom: 70px;
+}
+
+.pt-100 {
+    padding-top: 80px;
+}
+
+:host ::ng-deep .ant-breadcrumb-link {
+    font-size: 20px !important;
+}
+
+a:hover {
+    color: #d94443;
+}
+
+
+.iframe {
+    width: 100%;
+}

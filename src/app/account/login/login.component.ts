@@ -1,7 +1,8 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProxyService } from 'src/app/proxy/proxy.service';
+import { ProxyService } from 'src/app/shared/proxy/proxy.service';
 import { BaseComponent } from 'src/app/shared/components/base.component';
+import { AccountService } from 'src/app/shared/services/account/account.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent  extends BaseComponent implements OnInit {
   constructor(
     injector :Injector,
     private _formBuilder: FormBuilder,
-    private proxyService:ProxyService
+    private accountService : AccountService
+
   ) { 
     super(injector);
     this.loginForm = this._formBuilder.group({
@@ -30,11 +32,10 @@ export class LoginComponent  extends BaseComponent implements OnInit {
 
   submitform(form : any){
     this.loading = true
-    this.proxyService.login(form).subscribe(res=>{
-      this.AuthService.setToken(res.token)
+    this.accountService.login(form).subscribe(res=>{      
+      // this.AuthService.setToken(res.body);
       this.AuthService.setUserName(form.email)
-     // this.utility.route.navigate(['/']);
-      console.log(this.AuthService.isOwner())
+      this.utility.route.navigate(['/']);
       this.loading = false
     },()=>{
       this.utility.notification.error('Login','userName or Password error')

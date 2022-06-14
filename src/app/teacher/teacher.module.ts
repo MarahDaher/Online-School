@@ -1,26 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { StudentRoutingModule } from './student-routing.module';
+import { TeacherRoutingModule } from './teacher-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { StudentComponent } from './student.component';
 import { AppNgZorroAntdModule } from '../app-ng-zorro-antd.module';
-import { LessonComponent } from './student-lesson/lesson.component';
+import { TeacherComponent } from './teacher.component';
 
 
 @NgModule({
   declarations: [
-    StudentComponent,
-    LessonComponent
+    TeacherComponent
   ],
   imports: [
     CommonModule,
-    StudentRoutingModule,
+    TeacherRoutingModule,
     SharedModule,
     AppNgZorroAntdModule
-  ],
-  exports: [
-    LessonComponent
   ]
 })
-export class StudentModule { }
+export class TeacherModule { }
