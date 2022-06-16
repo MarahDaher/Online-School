@@ -8,9 +8,9 @@
                     <h1 class="animated animate__fadeInDown text-sred">{{ 'intro2' | translate }}</h1>
                     <p class="banner-btn" class="animated animate__fadeInUpBig"> {{ 'intro3' | translate }}.</p>
 
-                    <div class="banner-btn" class="animated animate__fadeInUpBig">
+                    <div class="banner-btn" class="animated animate__fadeInUpBig" *ngIf="!utility.isLogin">
                         <a href=" # " class="default-btn m-2 " [routerLink]=" '/account/login' ">
-                            {{ 'LearnMore' | translate }}
+                            {{ 'JoinClass' | translate }}
                         </a>
                         <!-- <a class="optional-btn m-2 ">
                             Find Out More

@@ -9,12 +9,21 @@ export class AuthService {
   public getToken(): any {
     return localStorage.getItem('token');
   }
-  public setToken(token:any) {
+  public setToken(token: any) {
     localStorage.setItem('token', token);
   }
 
-  public setUserName(user:any) {
+  public setUserName(user: any) {
     localStorage.setItem('userName', user);
+  }
+
+  public setUserStatus(status: any) {    
+    if (status == 1) {
+      localStorage.setItem('status', 'teacher');
+
+    } else {
+      localStorage.setItem('status', 'student');
+    }
   }
 
   public isAuthenticated(): boolean {
@@ -25,20 +34,4 @@ export class AuthService {
     return this.jwt.isTokenExpired(token);
   }
 
-
-  public isUser() {
-    const token = this.getToken();
-    let role = this.jwt.decodeToken(token)?.authorities.filter((el:any)=>{
-      return !!el.authority.match('ROLE')
-    })
-    return role&& role[0]?.authority == 'ROLE_VISITOR';
-    }
-
-  public isOwner() {
-    const token = this.getToken();
-    let role = this.jwt.decodeToken(token)?.authorities.filter((el:any)=>{
-      return  !!el.authority.match('ROLE')
-    })
-    return role && role[0]?.authority == 'ROLE_SHOP_OWNER';
-    }
 }

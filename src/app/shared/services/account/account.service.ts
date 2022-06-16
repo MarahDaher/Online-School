@@ -21,7 +21,7 @@ export class AccountService extends BaseComponent {
   }
 
   login(form:any){
-    return this.HttpClient.post(this.utility.urlApi + '/auth/login' , form , {observe: 'response'});
+    return this.HttpClient.post(this.utility.urlApi + '/auth/login' , form);
   }
 
 }

@@ -12,7 +12,10 @@ export class UtilityService {
   public textDir: any = 'rtl';
   public notification :NzNotificationService
   public urlApi = 'https://test-nest123.herokuapp.com';
+  public isStudent :Boolean = false;
+  public isTeacher :Boolean = false;;
 
+  public isLogin:Boolean = false;
   constructor(
     injector: Injector
     ) {
@@ -42,6 +45,23 @@ export class UtilityService {
 
   changeLang(language: string) {
     this.translate.use(language);
+  }
+
+  getToken(){
+    let token = localStorage.getItem('token');
+    this.isLogin = token ? true : false
+  }
+
+  getStatus(){
+    let status = localStorage.getItem('status')
+    if (status == 'student') {
+      this.isStudent = true;
+      this.isTeacher = false;
+    } 
+    else {
+      this.isStudent = false;
+      this.isTeacher = true;
+    } 
   }
 
 }

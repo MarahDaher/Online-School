@@ -16,15 +16,21 @@
                         <li class="nav-item">
                             <a class="nav-link mx-1" [routerLink]="[ '/lessons']" routerLinkActive="active">{{'Lessons' | translate }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-1" [routerLink]="[ '/student-profile']" routerLinkActive="active">{{'StudentProfile' | translate }}</a>
+                        <li class="nav-item" *ngIf="utility.isStudent">
+                            <a class="nav-link mx-1" [routerLink]="[ '/student']" routerLinkActive="active">{{'StudentProfile' | translate }}</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" *ngIf="!utility.isLogin">
+                            <a class="nav-link mx-1" [routerLink]="[ '/account/login']" routerLinkActive="active">{{'Login' | translate }}</a>
+                        </li>
+                        <li class="nav-item" *ngIf="utility.isLogin" (click)="logOut()">
+                            <a class="nav-link mx-1" [routerLink]="[ '/account/login']" routerLinkActive="active">{{'LogOut' | translate }}</a>
+                        </li>
+                        <!-- <li class="nav-item">
                             <a class="nav-link mx-1" [routerLink]="[ '/about-us']" routerLinkActive="active">{{'AboutUs' | translate }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-1" [routerLink]="[ '/contact']" routerLinkActive="active">{{'Contact' | translate }}</a>
-                        </li>
+                        </li> -->
 
 
                         <!-- <li class="nav-item" (click)="utility.changeLang('en')">

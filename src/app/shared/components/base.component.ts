@@ -15,6 +15,5 @@ export abstract class BaseComponent {
         this.utility = injector.get(UtilityService);
         this.HttpClient = injector.get(HttpClient);
         this.AuthService = injector.get(AuthService);
-
     }
 }

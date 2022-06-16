@@ -1,6 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProxyService } from 'src/app/shared/proxy/proxy.service';
 import { BaseComponent } from 'src/app/shared/components/base.component';
 import { AccountService } from 'src/app/shared/services/account/account.service';
 
@@ -27,14 +26,18 @@ export class LoginComponent  extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.removeItem('token');
     localStorage.removeItem('token')
+    localStorage.removeItem('status')
+    localStorage.removeItem('userName')
   }
 
   submitform(form : any){
     this.loading = true
-    this.accountService.login(form).subscribe(res=>{      
-      // this.AuthService.setToken(res.body);
-      this.AuthService.setUserName(form.email)
+    this.accountService.login(form).subscribe(( res:any)=>{            
+      this.AuthService.setToken(res?.token);
+      this.AuthService.setUserName(form?.email);
+      this.AuthService.setUserStatus(res?.status);      
       this.utility.route.navigate(['/']);
       this.loading = false
     },()=>{
