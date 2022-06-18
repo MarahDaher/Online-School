@@ -10,19 +10,19 @@
         </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end w-100">
-                        <li class="nav-item">
+                        <li class="nav-item" *ngIf="!isUser">
                             <a class="nav-link mx-1" aria-current="page" [routerLink]="[ '/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">{{'HomePage' | translate }}</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" *ngIf="isUser">
                             <a class="nav-link mx-1" [routerLink]="[ '/lessons']" routerLinkActive="active">{{'Lessons' | translate }}</a>
                         </li>
-                        <li class="nav-item" *ngIf="utility.isStudent">
+                        <li class="nav-item" *ngIf="isStudent">
                             <a class="nav-link mx-1" [routerLink]="[ '/student']" routerLinkActive="active">{{'StudentProfile' | translate }}</a>
                         </li>
-                        <li class="nav-item" *ngIf="!utility.isLogin">
+                        <li class="nav-item" *ngIf="!isUser">
                             <a class="nav-link mx-1" [routerLink]="[ '/account/login']" routerLinkActive="active">{{'Login' | translate }}</a>
                         </li>
-                        <li class="nav-item" *ngIf="utility.isLogin" (click)="logOut()">
+                        <li class="nav-item" *ngIf="isUser" (click)="logOut()">
                             <a class="nav-link mx-1" [routerLink]="[ '/account/login']" routerLinkActive="active">{{'LogOut' | translate }}</a>
                         </li>
                         <!-- <li class="nav-item">

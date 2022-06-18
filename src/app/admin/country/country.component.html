@@ -1,0 +1,31 @@
+<div class="p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1>Add Country</h1>
+        </div>
+        <div class="col-6 p-3">
+            <form [formGroup]="countryForm" (ngSubmit)="submitForm(countryForm.value)">
+
+                <nz-form-item>
+                    <nz-form-label
+                      [nzSm]="6"
+                      [nzXs]="24"
+                      nzFor="name"
+                      nzRequired
+                    >
+                      <span>Name</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input Country!">
+                      <input nz-input id="name" formControlName="name" />
+                    </nz-form-control>
+                  </nz-form-item>
+
+                  <nz-form-item nz-row class="register-area text-end w-75">
+                    <nz-form-control>
+                      <button nz-button nzType="primary" class="ml-3" [nzLoading]="isLoadingOne" [disabled]="!countryForm.valid">Add Country</button>
+                    </nz-form-control>
+                  </nz-form-item>
+            </form>
+        </div>
+    </div>
+</div>

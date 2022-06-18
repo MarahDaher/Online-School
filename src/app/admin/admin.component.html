@@ -1,0 +1,45 @@
+<nz-layout class="layout">
+  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" dir="ltr">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item (click)="AddTeacher()">
+        <i nz-icon nzType="user"></i>
+        <span>Add Teacher</span>
+      </li>
+      <li nz-menu-item (click)="AddCourse()">
+        <i nz-icon nzType="video-camera"></i>
+        <span>Add Course</span>
+      </li>
+      <li nz-menu-item (click)="AddClaas()">
+        <i nz-icon nzType="container"></i>
+        <span>Add Class</span>
+      </li>
+      <li nz-menu-item (click)="AddCountry()">
+        <i nz-icon nzType="global"></i>
+        <span>Add Country</span>
+      </li>
+    </ul>
+  </nz-sider>
+
+  <nz-layout>
+    <nz-header>
+      <div class="d-flex justify-content-between">
+        <h3 class="p-3">Admin Page</h3>
+        <a class="p-3" (click)="logOut()"><i nz-icon nzType="user" class="mx-2"></i>
+          <span>Log out</span>
+        </a>
+      </div>
+    </nz-header>
+
+    <nz-content>
+      <div class="inner-content">
+        <app-teacher *ngIf="addTeaher"></app-teacher>
+        <app-course *ngIf="addCourse"></app-course>
+        <app-class *ngIf="addClass"></app-class>
+        <app-country *ngIf="addCountry"></app-country>
+
+      </div>
+    </nz-content>
+
+  </nz-layout>
+</nz-layout>

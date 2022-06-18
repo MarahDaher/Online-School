@@ -27,9 +27,11 @@ export class LoginComponent  extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     localStorage.removeItem('token');
-    localStorage.removeItem('token')
-    localStorage.removeItem('status')
-    localStorage.removeItem('userName')
+    localStorage.removeItem('token');
+    localStorage.removeItem('status');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('id');
+
   }
 
   submitform(form : any){
@@ -37,8 +39,8 @@ export class LoginComponent  extends BaseComponent implements OnInit {
     this.accountService.login(form).subscribe(( res:any)=>{            
       this.AuthService.setToken(res?.token);
       this.AuthService.setUserName(form?.email);
-      this.AuthService.setUserStatus(res?.status);      
-      this.utility.route.navigate(['/']);
+      this.AuthService.setUserStatus(res?.status , res?.id);      
+      this.utility.route.navigate(['/lessons']);
       this.loading = false
     },()=>{
       this.utility.notification.error('Login','userName or Password error')

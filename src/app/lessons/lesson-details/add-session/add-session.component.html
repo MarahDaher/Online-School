@@ -1,0 +1,39 @@
+<form nz-form [formGroup]="sessionForm">
+
+    <nz-form-item class="w-100">
+        <nz-form-label
+          [nzSm]="6"
+          [nzXs]="24"
+          nzFor="url"
+          nzRequired
+        >
+          <span>الرابط</span>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input id="url" formControlName="url" />
+        </nz-form-control>
+    </nz-form-item>
+
+    
+    <nz-form-item class="w-100">
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>كلمة السر</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+          <input
+            nz-input
+            type="password"
+            id="password"
+            formControlName="password"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+</form>
+
+
+
+<div *nzModalFooter>
+    <button nz-button nzType="text" (click)="handleCancel()">إغلاق</button>
+    <button nz-button nzType="primary" (click)="submitForm(sessionForm.value)" [nzLoading]="isLoadingOne">
+        إنشاء درس
+    </button>
+</div>

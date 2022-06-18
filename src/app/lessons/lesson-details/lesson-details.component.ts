@@ -1,5 +1,7 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, ViewContainerRef } from '@angular/core';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { BaseComponent } from 'src/app/shared/components/base.component';
+import { AddSessionComponent } from './add-session/add-session.component';
 
 @Component({
   selector: 'app-lesson-details',
@@ -36,7 +38,9 @@ export class LessonDetailsComponent extends BaseComponent implements OnInit {
     }
   ];
   constructor(
-    injector: Injector
+    injector: Injector,
+    private viewContainerRef: ViewContainerRef,
+    public modal: NzModalService,
   ) {
     super(injector);
    }
@@ -44,4 +48,25 @@ export class LessonDetailsComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  AddSession(){
+    const modal = this.modal.create({
+      nzTitle: 'إضافـــة درس',
+      nzContent: AddSessionComponent,
+      nzViewContainerRef: this.viewContainerRef,
+      nzDirection: "rtl",
+      nzWidth: '600px',
+      nzComponentParams: {
+        teacherId : localStorage.getItem('id')
+      },
+      nzOnOk: () => new Promise(resolve => setTimeout(resolve, 1000)),
+    });
+
+    modal.afterClose.subscribe(result => {
+      if (result) {
+        // this.initLoading = true;
+        // this.getEmployeeMaterials(result?.employeeId)
+      }
+    });
+  }
 }

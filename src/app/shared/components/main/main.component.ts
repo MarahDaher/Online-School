@@ -48,5 +48,7 @@ export class MainComponent extends BaseComponent implements OnInit {
     localStorage.removeItem('token')
     localStorage.removeItem('status')
     localStorage.removeItem('userName')
+    this.utility.route.navigate(['/']);
+
   }
 }

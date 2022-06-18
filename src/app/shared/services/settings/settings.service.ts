@@ -15,4 +15,18 @@ export class SettingsService extends BaseComponent {
   addCountry(country:any){
     return this.HttpClient.post(this.utility.urlApi + '/country' , country);
   }
+
+  addTeacher(teacher:any){
+    return this.HttpClient.post(this.utility.urlApi + '/auth/register/teacher' , teacher);
+  }
+
+  addCourse(course:any){
+    return this.HttpClient.post(this.utility.urlApi + '/course' , course);
+  }
+
+  addClass(classs:any){
+    return this.HttpClient.post(this.utility.urlApi + '/class' , classs);
+  }
+
+
 }

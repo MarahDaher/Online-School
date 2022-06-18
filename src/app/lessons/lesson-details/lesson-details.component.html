@@ -246,14 +246,21 @@
                         <div class="card p-3">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="single-facilities ">
-                                        <div class="number">
-                                            <span>{{class?.number}}</span>
+                                    <div class="single-facilities row d-flex justify-content-between align-items-center">
+                                        <div class="col-6">
+                                            <div class="number">
+                                                <span>{{class?.number}}</span>
+                                            </div>
+                                            <div class="facilities-content ">
+                                                <h3 class="number">
+                                                    <h3>{{class?.title}} :</h3>
+                                                </h3>
+                                            </div>
                                         </div>
-                                        <div class="facilities-content ">
-                                            <h3 class="number">
-                                                <h3>{{class?.title}} :</h3>
-                                            </h3>
+                                        <div class="col-6  d-flex justify-content-end" *ngIf="isTeacher">
+                                            <a class="default-btn" (click)="AddSession()">
+                                                إنشاء درس
+                                            </a>
                                         </div>
                                     </div>
                                     <h6> {{ class?.desc}}
@@ -288,7 +295,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" *ngIf="!isUser">
             <div class="col-md-12 text-center">
                 <a class="default-btn">
                     قم بالتسجيل الان

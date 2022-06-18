@@ -16,4 +16,21 @@ export abstract class BaseComponent {
         this.HttpClient = injector.get(HttpClient);
         this.AuthService = injector.get(AuthService);
     }
+
+
+    get isStudent(){        
+        return this.AuthService.isStudent();
+    }
+
+    get isTeacher(){
+        return this.AuthService.isTeacher();
+    }
+
+    get isUser(){
+        return this.AuthService.getToken();
+    }
+
+    get getUserName(){
+        return localStorage.getItem('userName')
+    }
 }

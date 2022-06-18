@@ -1,0 +1,189 @@
+<div class="p-3">
+    <div class="row">
+        <div class="col-12">
+            <h1>Add New Class</h1>
+        </div>
+        <div class="col-6 p-3">
+            <form [formGroup]="classForm"
+                (ngSubmit)="submitForm(classForm.value)">
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="24"
+                        nzFor="name"
+                        nzRequired>
+                        <span>Name</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
+                        input your Class Name!">
+                        <input nz-input id="name" formControlName="name" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="24"
+                        nzFor="ubjects"
+                        nzRequired>
+                        <span>Subjects</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
+                        input your Subjects!">
+                        <nz-select formControlName="subjects">
+                            <nz-option nzLabel="Arabic" [nzValue]="'Arabic'"></nz-option>
+                            <nz-option nzLabel="Math" [nzValue]="'Math'"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="24"
+                        nzFor="Teacher"
+                        nzRequired>
+                        <span>Teacher</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
+                        select your Teacher!">
+                        <nz-select formControlName="teacherId">
+                            <nz-option nzLabel="Arabic" [nzValue]="'Arabic'"></nz-option>
+                            <nz-option nzLabel="Math" [nzValue]="'Math'"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="24"
+                        nzFor="Course"
+                        nzRequired>
+                        <span>Course</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
+                        select your Course!">
+                        <nz-select formControlName="courseId">
+                            <nz-option nzLabel="Arabic" [nzValue]="'Arabic'"></nz-option>
+                            <nz-option nzLabel="Math" [nzValue]="'Math'"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="12"
+                        nzFor="Code"
+                        nzRequired>
+                        <span>Code</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
+                        input your Class Code!">
+                        <input nz-input id="name" formControlName="code" />
+                    </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="12"
+                        nzFor="maxStudent"
+                        nzRequired>
+                        <span>Max Student</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="12" nzErrorTip="Please
+                        input Max Student!">
+                        <input nz-input id="maxStudent"
+                            formControlName="maxStudent" type="number" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="12"
+                        nzFor="price"
+                        nzRequired>
+                        <span>Price</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="12" nzErrorTip="Please
+                        input Price!">
+                        <input nz-input id="price" formControlName="price"
+                            type="number" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="12"
+                        nzFor="sessionNumber"
+                        nzRequired>
+                        <span>Session Number</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="12" nzErrorTip="Please
+                        input sessionNumber!">
+                        <input nz-input id="sessionNumber" formControlName="sessionNumber"
+                            type="number" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="24"
+                        nzFor="description"
+                        nzRequired>
+                        <span>Description</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
+                        input your Class Description!">
+                        <textarea rows="4" nz-input
+                            formControlName="description"></textarea>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="24"
+                        nzFor="Start Date"
+                        nzRequired>
+                        <span>Start Date</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
+                        input your Class Start Date!">
+                        <nz-date-picker formControlName="startDate" class="w-100"></nz-date-picker>
+
+                    </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item>
+                    <nz-form-label
+                        [nzSm]="6"
+                        [nzXs]="24"
+                        nzFor="End Date"
+                        nzRequired>
+                        <span>End Date</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Class End Date!">
+                        <nz-date-picker formControlName="endDate" class="w-100"></nz-date-picker>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item nz-row class="register-area text-end w-75">
+                    <nz-form-control>
+                        <button nz-button nzType="primary" class="ml-3"
+                            [nzLoading]="isLoadingOne"
+                            [disabled]="!classForm.valid">Add Class</button>
+                    </nz-form-control>
+                </nz-form-item>
+            </form>
+        </div>
+    </div>
+</div>
