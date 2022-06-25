@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, Injector, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BaseComponent } from '../shared/components/base.component';
 import { IframeService } from '../shared/iframe.service';
+import { LessonsService } from '../shared/services/lessons/lessons.service';
 declare var JitsiMeetExternalAPI: any;
 
 @Component({
@@ -16,9 +17,8 @@ export class TeacherComponent extends BaseComponent implements OnInit, AfterView
   api: any;
   user: any;
   iframe: any;
-
-
-  userList=['ali','ahmad','samer']
+  password:any 
+  studentList = []
   // For Custom Controls
   isAudioMuted = false;
   isVideoMuted = false;
@@ -26,7 +26,9 @@ export class TeacherComponent extends BaseComponent implements OnInit, AfterView
   constructor(
     injector :Injector,
     private router: Router,
-    private iframeService: IframeService
+    private iframeService: IframeService,
+    private activatedRoute: ActivatedRoute,
+    private lessonsService :LessonsService
   ) { 
     super(injector);
   }
@@ -36,13 +38,25 @@ export class TeacherComponent extends BaseComponent implements OnInit, AfterView
   }
 
   ngOnInit(): void {
-    this.room = 'firstclass-cs123-ali'; // Set your room name
-    this.user = {
-      name: 'ali aljonde' // Set your username
-    }
+
   }
 
   ngAfterViewInit(): void {
+    this.lessonsService.getJitsiSession(this.activatedRoute.snapshot.paramMap.get('id')).subscribe((el:any)=>{
+      this.room = el.roomName
+      this.password = el.password
+      this.user = {
+        name: el.teacher.firstName+" "+el.teacher.lastName // Set your username
+      }
+      el.students.forEach((el:any) => {
+        el.fullName = `${el.firstName} ${el.middleName} ${el.lastName}`
+      });
+      this.studentList=el.students.map((el:any)=>el.fullName)
+      this.initSession()
+    })
+  }
+
+  initSession(){
     this.options = {
       roomName: this.room,
       width: 1300,
@@ -75,6 +89,7 @@ export class TeacherComponent extends BaseComponent implements OnInit, AfterView
     console.log(this.iframe.src)
   }
 
+
   // handleParticipantJoined = async (participant) => {
   //   console.log("handleParticipantJoined", participant); // { id: "2baa184e", displayName: "Shanu Verma", formattedDisplayName: "Shanu Verma" }
   //   if (participant.displayName != 'ali') {
@@ -94,13 +109,13 @@ export class TeacherComponent extends BaseComponent implements OnInit, AfterView
 
   participantRoleChanged = async (event:any) => {
     if (event.role == "moderator") {
-      this.api.executeCommand('password', '123123123');
+      this.api.executeCommand('password', this.password);
       this.api.executeCommand('toggleLobby', true);
    }
   }
 
   checkUsers(name :any){
-    return this.userList.find(el=>el==name) && !this.api.getParticipantsInfo().find((el:any)=>el.displayName == name)
+    return this.studentList.find(el=>el==name) && !this.api.getParticipantsInfo().find((el:any)=>el.displayName == name)
   }
 
   studentPage() {

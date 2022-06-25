@@ -11,7 +11,9 @@ export class UtilityService {
   public translate: TranslateService;
   public textDir: any = 'rtl';
   public notification :NzNotificationService
-  public urlApi = 'https://test-nest123.herokuapp.com';
+ // public urlApi = 'https://test-nest123.herokuapp.com';
+  public urlApi = 'http://localhost:3000';
+
   public isStudent :Boolean = false;
   public isTeacher :Boolean = false;;
 

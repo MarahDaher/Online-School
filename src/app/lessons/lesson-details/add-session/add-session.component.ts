@@ -27,18 +27,20 @@ export class AddSessionComponent extends BaseComponent implements OnInit {
     this.sessionForm = this._formBuilder.group({
       classId: ['', [Validators.required]],
       teacherId: ['', [Validators.required]],
-      url: ['', [Validators.required]],
+      roomName: ['', [Validators.required]],
       password : ['', [Validators.required]],
     });
   }
 
   ngOnInit(): void {
     console.log(this.selectedClass);
+    var randomstring = Math.random().toString(36).slice(-8);
     if (this.selectedClass) {
       let teacher_id = localStorage.getItem('userId')
       this.sessionForm.get('teacherId')?.setValue(teacher_id);
       this.sessionForm.get('classId')?.setValue(this.selectedClass?.id);
-      this.sessionForm.get('url')?.setValue('www.online-school.com/class/' + this.selectedClass?.code);
+      this.sessionForm.get('roomName')?.setValue(this.selectedClass?.code);
+      this.sessionForm.get('password')?.setValue(randomstring);
     }
   }
 
@@ -52,6 +54,7 @@ export class AddSessionComponent extends BaseComponent implements OnInit {
     this.lessonsService.addJitsiSession(form).subscribe((res: any) => {
       this.isLoadingOne = false;
       this.utility.notification.success('Session', 'Add Successfully');
+      this.utility.navigate('/teacher/'+res.id)
       this.modal.close(form); 
     }, (error: any) => {
         this.utility.notification.error('Session', error);

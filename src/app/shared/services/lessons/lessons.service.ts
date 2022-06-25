@@ -12,10 +12,6 @@ export class LessonsService extends BaseComponent {
     super(injector);
   }
 
-  getSessionUrl(classId:any){
-    return this.HttpClient.get(this.utility.urlApi + `/get-url/${classId}`);
-  }
-
   addCourse(course :any){
     return this.HttpClient.post(this.utility.urlApi + '/course' , course);
   }
@@ -27,7 +23,12 @@ export class LessonsService extends BaseComponent {
   addJitsiSession(jitsi:any){
     return this.HttpClient.post(this.utility.urlApi + '/jitsi-session' , jitsi);
   }
-
+  getJitsiSession(id:any){
+    return this.HttpClient.get(this.utility.urlApi + '/jitsi-session/'+id);
+  }
+  getJitsiUrl(classId:any){
+    return this.HttpClient.get(this.utility.urlApi + '/jitsi-session/get-url/'+classId);
+  }
   getAllClassesByStudent(studentId :any){
     return this.HttpClient.get(this.utility.urlApi + `/class?studentId=${studentId}`);
   }
