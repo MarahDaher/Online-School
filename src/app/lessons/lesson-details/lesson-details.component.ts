@@ -30,14 +30,15 @@ export class LessonDetailsComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     let id = localStorage.getItem('id');
-    let course_Id = this.route.snapshot.params.id;
+    let course_id = this.route.snapshot.params.id;
   
     if (this.isTeacher) {
-      this.getAllClassByTeacher(id)
+      this.getAllClassByTeacher(id , course_id)
     }
     if (this.isStudent) {
-      this.getAllClassByCourse(course_Id);
+      this.getAllClassByCourse(course_id);
     }
+    
   }
 
 
@@ -71,9 +72,9 @@ export class LessonDetailsComponent extends BaseComponent implements OnInit {
     });
   }
 
-  getAllClassByTeacher(teacher_id:any){
+  getAllClassByTeacher(teacher_id:any , course_id:any){
     this.allClasses = [];
-    this.lessonsService.getAllClassByTeacher(teacher_id).subscribe(res=>{
+    this.lessonsService.getAllClassByTeacher(teacher_id , course_id).subscribe(res=>{
       this.allClasses = res;     
     });
   }

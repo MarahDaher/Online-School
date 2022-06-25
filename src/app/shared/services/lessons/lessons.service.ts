@@ -32,8 +32,8 @@ export class LessonsService extends BaseComponent {
     return this.HttpClient.get(this.utility.urlApi + `/class?studentId=${studentId}`);
   }
 
-  getAllClassByTeacher(teacher_id :any){
-    return this.HttpClient.get(this.utility.urlApi + `/class?teacherId=${teacher_id}`);
+  getAllClassByTeacher(teacher_id :any , course_id :any){
+    return this.HttpClient.get(this.utility.urlApi + `/class?teacherId=${teacher_id}&courseId=${course_id}`);
   }
 
   getAllClassByCourse(course_Id:any){
