@@ -18,11 +18,25 @@ export class LessonsComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllCourses();
+    let id = localStorage.getItem('userId');
+
+    if (this.isTeacher) {      
+      this.getAllCoursesByTeacher(id);
+    }
+    else {
+      this.getAllCourses();
+    }
   }
 
   getAllCourses(){
     this.settingsService.getAllCourses().subscribe(res=>{
+      this.allCourses = res;
+      console.log(this.allCourses);
+    })
+  }
+
+  getAllCoursesByTeacher(id:any){
+    this.settingsService.getAllCoursesByTeacher(id).subscribe(res=>{
       this.allCourses = res;
       console.log(this.allCourses);
     })

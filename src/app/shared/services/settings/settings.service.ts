@@ -31,6 +31,10 @@ export class SettingsService extends BaseComponent {
     return this.HttpClient.get(this.utility.urlApi + `/course`);
   }
 
+  getAllCoursesByTeacher(id:any){
+    return this.HttpClient.get(this.utility.urlApi + `/course?teacherId=${id}`);
+  }
+
   addCourse(course:any){
     return this.HttpClient.post(this.utility.urlApi + '/course' , course);
   }

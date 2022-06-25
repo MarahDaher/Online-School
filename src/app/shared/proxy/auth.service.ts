@@ -19,14 +19,17 @@ export class AuthService {
     localStorage.setItem('userName', user);
   }
 
-  public setUserStatus(status: any , id:any) {    
+  public setUserStatus(status: any , res:any) {    
     if (status == 1) {
       localStorage.setItem('status', 'teacher');
+      localStorage.setItem('userId', res?.teacher?.id);
 
     } else {
       localStorage.setItem('status', 'student');
+      localStorage.setItem('userId', res?.student?.id);
+
     }
-    localStorage.setItem('id', id);
+    localStorage.setItem('id', res?.id);
 
   }
 

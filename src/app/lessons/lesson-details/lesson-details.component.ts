@@ -29,7 +29,7 @@ export class LessonDetailsComponent extends BaseComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    let id = localStorage.getItem('id');
+    let id = localStorage.getItem('userId');
     let course_id = this.route.snapshot.params.id;
   
     if (this.isTeacher) {

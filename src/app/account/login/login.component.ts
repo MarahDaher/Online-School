@@ -39,7 +39,7 @@ export class LoginComponent  extends BaseComponent implements OnInit {
     this.accountService.login(form).subscribe(( res:any)=>{            
       this.AuthService.setToken(res?.token);
       this.AuthService.setUserName(form?.email);
-      this.AuthService.setUserStatus(res?.status , res?.id);      
+      this.AuthService.setUserStatus(res?.status , res);      
       this.utility.route.navigate(['/lessons']);
       this.loading = false
     },()=>{
