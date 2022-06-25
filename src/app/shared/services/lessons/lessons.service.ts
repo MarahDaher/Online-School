@@ -27,4 +27,18 @@ export class LessonsService extends BaseComponent {
   addJitsiSession(jitsi:any){
     return this.HttpClient.post(this.utility.urlApi + '/jitsi-session' , jitsi);
   }
+
+  getAllClassesByStudent(studentId :any){
+    return this.HttpClient.get(this.utility.urlApi + `/class?studentId=${studentId}`);
+  }
+
+  getAllClassByTeacher(teacher_id :any){
+    return this.HttpClient.get(this.utility.urlApi + `/class?teacherId=${teacher_id}`);
+  }
+
+  getAllClassByCourse(course_Id:any){
+    return this.HttpClient.get(this.utility.urlApi + `/class?courseId=${course_Id}`);
+  }
+
+
 }

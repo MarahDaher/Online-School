@@ -1,7 +1,11 @@
 import { Component, Injector, OnInit, ViewContainerRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BaseComponent } from 'src/app/shared/components/base.component';
+import { LessonsService } from 'src/app/shared/services/lessons/lessons.service';
+import { SettingsService } from 'src/app/shared/services/settings/settings.service';
 import { AddSessionComponent } from './add-session/add-session.component';
+import { RegisterClassComponent } from './register-class/register-class.component';
 
 @Component({
   selector: 'app-lesson-details',
@@ -10,46 +14,34 @@ import { AddSessionComponent } from './add-session/add-session.component';
 })
 export class LessonDetailsComponent extends BaseComponent implements OnInit {
 
-  classList = [
-    {
-      id: 0 ,
-      number: '01',
-      title: 'المرحلة الأولى',
-      desc: "التعريف باللغة العربية و أصالتها و تعليم حروفها مع المدود الطويلة و القصيرة ، حتى يستطيع المتعلّم إتقان تشكيل مقطع من حرفين ، أو تركيب كلمة من حرفين أو ثلاثــة."
-    },
-    {
-      id: 1 ,
-      number: '02',
-      title: 'المرحلة الثانية',
-      desc: "تعلّم كيفيـــة تشكيــل الجملــة ، مع التّمييز بين نوعـــي الجملة ( الجملة الغعلـــة ،  الجملـــة الأسميـــة ) بالإضافة إلى التميـــز بين الفعل و الاســـم."
-    },
-    {
-      id: 2 ,
-      number: '03',
-      title: 'المرحلة الثالثة',
-      desc :"التّدرّب على قراءة نصوص من ثلاثة أو أربعة أسطـــر ، و محاولـــة وصف الأشياء التي حولنـــا بجُملٍ تعبيريّـــة جميلـــة ذات معنى."
+  allClasses :any = [];
+  courseDetails : any;
 
-    },
-    {
-      id: 3,
-      number: '04',
-      title: 'المرحلة الأخيرة',
-      desc : "التركيـــز على الجانـــب اللغــوي و الإملائـــي بشرح دروس في قواعد اللغـــة و الإملاء."
-    }
-  ];
   constructor(
     injector: Injector,
     private viewContainerRef: ViewContainerRef,
     public modal: NzModalService,
+    private settingsService : SettingsService ,
+    private lessonsService : LessonsService,
+    private route :ActivatedRoute
   ) {
     super(injector);
    }
 
   ngOnInit(): void {
+    let id = localStorage.getItem('id');
+    let course_Id = this.route.snapshot.params.id;
+  
+    if (this.isTeacher) {
+      this.getAllClassByTeacher(id)
+    }
+    if (this.isStudent) {
+      this.getAllClassByCourse(course_Id);
+    }
   }
 
 
-  AddSession(){
+  AddSession(classForm:any){
     const modal = this.modal.create({
       nzTitle: 'إضافـــة درس',
       nzContent: AddSessionComponent,
@@ -57,15 +49,63 @@ export class LessonDetailsComponent extends BaseComponent implements OnInit {
       nzDirection: "rtl",
       nzWidth: '600px',
       nzComponentParams: {
-        teacherId : localStorage.getItem('id')
+        selectedClass : classForm
       },
       nzOnOk: () => new Promise(resolve => setTimeout(resolve, 1000)),
     });
 
     modal.afterClose.subscribe(result => {
       if (result) {
-        // this.initLoading = true;
-        // this.getEmployeeMaterials(result?.employeeId)
+        console.log(result);
+        
+      }
+    });
+  }
+
+  getAllClassByCourse(course_id:any){
+    this.allClasses = [];
+    this.lessonsService.getAllClassByCourse(course_id).subscribe((res :any)=>{
+      this.allClasses = res;     
+      console.log(this.allClasses);
+       
+    });
+  }
+
+  getAllClassByTeacher(teacher_id:any){
+    this.allClasses = [];
+    this.lessonsService.getAllClassByTeacher(teacher_id).subscribe(res=>{
+      this.allClasses = res;     
+    });
+  }
+
+  getAllClassesByStudent(student_id:any){
+    this.allClasses = [];
+    this.lessonsService.getAllClassesByStudent(student_id).subscribe(res=>{
+      this.allClasses = res;     
+    });
+  }
+
+  getAllClasses(){
+    this.allClasses = [];
+    this.settingsService.getAllClass().subscribe(res=>{
+      this.allClasses = res;     
+    });
+  }
+
+  registerClass(){
+    const modal = this.modal.create({
+      nzTitle: 'تسجيـــل',
+      nzContent: RegisterClassComponent,
+      nzViewContainerRef: this.viewContainerRef,
+      nzDirection: "rtl",
+      nzWidth: '600px',
+      nzOnOk: () => new Promise(resolve => setTimeout(resolve, 1000)),
+    });
+
+    modal.afterClose.subscribe(result => {
+      if (result) {
+        console.log(result);
+        
       }
     });
   }

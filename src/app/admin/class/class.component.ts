@@ -12,7 +12,8 @@ export class ClassComponent  extends BaseComponent implements OnInit {
 
   classForm :FormGroup;
   isLoadingOne = false;
-  
+  allCourses :any;
+
   constructor(
     injector: Injector,
     private _formBuilder: FormBuilder,
@@ -29,27 +30,35 @@ export class ClassComponent  extends BaseComponent implements OnInit {
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       sessionNumber: ['', [Validators.required]],
-      startDate: ['', [Validators.required]],
-      endDate: ['', [Validators.required]],
+      startDate: [new Date, [Validators.required]],
+      endDate: [new Date, [Validators.required]],
     });
   }
 
   ngOnInit(): void {
+    this.getAllCourses();
   }
 
   submitForm(form :any){
+    this.isLoadingOne = true;
+    this.settingsService.addClass(form).subscribe(res =>{
+      this.isLoadingOne = false;
+      this.utility.notification.success('Class', 'Added Successfully !');
+      this.classForm.reset();
+    } , err =>{
+      this.isLoadingOne = false;
+      this.utility.notification.error('Class', 'Added Unsuccessfully !' , err.message);
+    });
+  }
 
-    console.log(form);
-    
-    // this.isLoadingOne = true;
-    // this.settingsService.addClass(form).subscribe(res =>{
-    //   this.isLoadingOne = false;
-    //   this.utility.notification.success('Class', 'Added Successfully !');
-    //   this.classForm.reset();
-    // } , err =>{
-    //   this.isLoadingOne = false;
-    //   this.utility.notification.error('Class', 'Added Unsuccessfully !' , err.message);
-    // });
+  // getALLTeacher(){
+  //   this.settingsService.ge
+  // }
+
+  getAllCourses(){
+    this.settingsService.getAllCourses().subscribe(res=>{
+      this.allCourses = res;
+    })
   }
 
 }

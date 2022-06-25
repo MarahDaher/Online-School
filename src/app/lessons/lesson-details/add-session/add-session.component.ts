@@ -11,7 +11,7 @@ import { LessonsService } from 'src/app/shared/services/lessons/lessons.service'
 })
 export class AddSessionComponent extends BaseComponent implements OnInit {
 
-  @Input() teacherId :any;
+  @Input() selectedClass :any;
 
   sessionForm :FormGroup;
   isLoadingOne = false;
@@ -33,6 +33,13 @@ export class AddSessionComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.selectedClass);
+    if (this.selectedClass) {
+      let teacher_id = localStorage.getItem('id')
+      this.sessionForm.get('teacherId')?.setValue(teacher_id);
+      this.sessionForm.get('classId')?.setValue(this.selectedClass?.id);
+      this.sessionForm.get('url')?.setValue('www.online-school.com/class/' + this.selectedClass?.code);
+    }
   }
 
 

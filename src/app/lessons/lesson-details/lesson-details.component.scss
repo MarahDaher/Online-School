@@ -165,7 +165,7 @@
     border: 1px solid #AEAEAE;
     box-shadow: 0px 4px 24px #ffc39f;
     border-radius: 30px;
-    height: 220px;
+    min-height: 350px;
 }
 
 .class-list .card h3 {
@@ -254,4 +254,8 @@
 
 .facilities-content {
     padding-right: 75px;
+}
+
+span > p{
+    font-weight: bold;
 }

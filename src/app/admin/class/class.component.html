@@ -49,8 +49,8 @@
                     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
                         select your Teacher!">
                         <nz-select formControlName="teacherId">
-                            <nz-option nzLabel="Arabic" [nzValue]="'Arabic'"></nz-option>
-                            <nz-option nzLabel="Math" [nzValue]="'Math'"></nz-option>
+                            <nz-option nzLabel="Arabic" [nzValue]="'ed2ff529-280c-4292-8663-8ccf6ffc3bcc'"></nz-option>
+                            <nz-option nzLabel="Math" [nzValue]="'ed2ff529-280c-4292-8663-8ccf6ffc3bcc'"></nz-option>
                         </nz-select>
                     </nz-form-control>
                 </nz-form-item>
@@ -66,8 +66,7 @@
                     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
                         select your Course!">
                         <nz-select formControlName="courseId">
-                            <nz-option nzLabel="Arabic" [nzValue]="'Arabic'"></nz-option>
-                            <nz-option nzLabel="Math" [nzValue]="'Math'"></nz-option>
+                            <nz-option *ngFor="let course of allCourses" [nzLabel]="course?.name" [nzValue]="course?.id"></nz-option>
                         </nz-select>
                     </nz-form-control>
                 </nz-form-item>
@@ -113,7 +112,7 @@
                     <nz-form-control [nzSm]="14" [nzXs]="12" nzErrorTip="Please
                         input Price!">
                         <input nz-input id="price" formControlName="price"
-                            type="number" />
+                            type="text" />
                     </nz-form-control>
                 </nz-form-item>
 

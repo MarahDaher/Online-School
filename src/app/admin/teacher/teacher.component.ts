@@ -12,6 +12,7 @@ export class TeacherComponent extends BaseComponent implements OnInit {
 
   teacherForm :FormGroup;
   isLoadingOne = false;
+  teacherDetails :any;
 
   constructor(
     injector: Injector,
@@ -39,6 +40,7 @@ export class TeacherComponent extends BaseComponent implements OnInit {
     this.isLoadingOne = true;
     this.settingsService.addTeacher(form).subscribe(res =>{
       this.isLoadingOne = false;
+      this.teacherDetails = res;
       this.utility.notification.success('Teacher', 'Added Successfully !');
       this.teacherForm.reset();
     } , err =>{

@@ -214,7 +214,7 @@
     </div>
 </section> -->
 
-<section class="pt-100 pb-70">
+<section class="pt-100 pb-70" *ngIf="allClasses.length !== 0">
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-lg-6 col-md-12">
@@ -242,29 +242,37 @@
                     <h3 class="text-center">سيتــم إعطاء المادة على عدة مراحـــل</h3>
                 </div>
                 <div class="row class-list">
-                    <div class="col-md-6 mt-5" *ngFor="let class of classList">
+                    <div class="col-md-6 mt-5" *ngFor="let class of allClasses">
                         <div class="card p-3">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="single-facilities row d-flex justify-content-between align-items-center">
                                         <div class="col-6">
                                             <div class="number">
-                                                <span>{{class?.number}}</span>
+                                                <span>{{class?.sessionNumber}}</span>
                                             </div>
                                             <div class="facilities-content ">
                                                 <h3 class="number">
-                                                    <h3>{{class?.title}} :</h3>
+                                                    <h3>{{class?.name}} :</h3>
                                                 </h3>
                                             </div>
                                         </div>
                                         <div class="col-6  d-flex justify-content-end" *ngIf="isTeacher">
-                                            <a class="default-btn" (click)="AddSession()">
+                                            <a class="default-btn" (click)="AddSession(class)">
                                                 إنشاء درس
                                             </a>
                                         </div>
                                     </div>
-                                    <h6> {{ class?.desc}}
+                                    <h6> {{ class?.description}}
                                     </h6>
+                                    <span class="d-flex mt-3 justify-content-between px-4">
+                                        <p>تاريخ البدء : {{class?.startDate}}</p>
+                                        <p>تاريخ الانتهاء : {{class?.endDate}}</p>
+                                    </span>
+                                    <span class="d-flex mt-1 justify-content-between px-4">
+                                        <p> عدد الطلاب : {{class?.maxStudent}}</p>
+                                        <p> السعر: {{class?.price}} $</p>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -295,12 +303,19 @@
             </div>
         </div>
 
-        <div class="row" *ngIf="!isUser">
+        <div class="row" *ngIf="isStudent">
             <div class="col-md-12 text-center">
-                <a class="default-btn">
+                <a class="default-btn" (click)="registerClass()">
                     قم بالتسجيل الان
                 </a>
             </div>
         </div>
+    </div>
+</section>
+
+
+<section *ngIf="allClasses.length == 0" class="pt-100 pb-70">
+    <div class="col-md-12 mt-5 text-center">
+        <h1>لا يوجد دروس</h1>
     </div>
 </section>

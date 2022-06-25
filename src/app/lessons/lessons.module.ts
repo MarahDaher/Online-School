@@ -5,12 +5,14 @@ import { SharedModule } from '../shared/shared.module';
 import { LessonsRoutingModule } from './lessons-routing.module';
 import { LessonDetailsComponent } from './lesson-details/lesson-details.component';
 import { AddSessionComponent } from './lesson-details/add-session/add-session.component';
+import { RegisterClassComponent } from './lesson-details/register-class/register-class.component';
 
 @NgModule({
   declarations: [
     LessonsComponent,
     LessonDetailsComponent,
     AddSessionComponent,
+    RegisterClassComponent,
     
   ],
   imports: [

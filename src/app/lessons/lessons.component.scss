@@ -28,6 +28,14 @@ img {
     overflow: hidden;
 }
 
+.card {
+    min-height: 660px;
+}
+
+.class-content > p {
+    min-height: 50px;
+}
+
 .default-btn::before {
     content: '';
     position: absolute;
@@ -51,8 +59,8 @@ a {
     position: relative;
     z-index: 1;
     background-color: #f5edec;
-    height: 660px;
-    min-height: 660px;
+    height: 720px;
+    min-height: 720px;
 }
 
 .lessons-content {

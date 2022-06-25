@@ -12,6 +12,11 @@ export class SettingsService extends BaseComponent {
     super(injector);
   }
 
+  // Country
+  getAllCountry(){
+    return this.HttpClient.get(this.utility.urlApi + '/country');
+  }
+
   addCountry(country:any){
     return this.HttpClient.post(this.utility.urlApi + '/country' , country);
   }
@@ -20,13 +25,28 @@ export class SettingsService extends BaseComponent {
     return this.HttpClient.post(this.utility.urlApi + '/auth/register/teacher' , teacher);
   }
 
+
+  //Course
+  getAllCourses(){
+    return this.HttpClient.get(this.utility.urlApi + `/course`);
+  }
+
   addCourse(course:any){
     return this.HttpClient.post(this.utility.urlApi + '/course' , course);
+  }
+
+  //Course
+  getAllClass(){
+    return this.HttpClient.get(this.utility.urlApi + `/class`);
   }
 
   addClass(classs:any){
     return this.HttpClient.post(this.utility.urlApi + '/class' , classs);
   }
 
+  //student 
+  getStudentById(id:any){
+    return this.HttpClient.get(this.utility.urlApi + `/student/${id}`);
+  }
 
 }

@@ -29,7 +29,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-6" *ngFor="let course of allCourses">
                 <div class="single-class card shadow">
                     <div class="class-image">
                         <a>
@@ -39,17 +39,17 @@
 
                     <div class="class-content">
                         <h3>
-                            <a>{{'Class1' | translate}}</a>
+                            <a>{{course?.name}}</a>
                         </h3>
-                        <p>{{'Class1Desc' | translate}}</p>
+                        <p>{{course?.description}}</p>
                         <div class="class-btn">
-                            <a [routerLink]="['lesson-details']" class="default-btn">{{'JoinClass' | translate}}</a>
+                            <a [routerLink]="['lesson-details', course?.id]" class="default-btn">{{'JoinClass' | translate}}</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6">
+            <!-- <div class="col-lg-6 col-md-6">
                 <div class="single-class card shadow">
                     <div class="class-image">
                         <a href="#">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
