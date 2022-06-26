@@ -22,6 +22,7 @@ export class CourseComponent extends BaseComponent implements OnInit {
     this.courseForm = this._formBuilder.group({
       name: ['', [Validators.required]],
       description: ['', Validators.required],
+      extraDescription: ['', Validators.required],
     });
   }
 

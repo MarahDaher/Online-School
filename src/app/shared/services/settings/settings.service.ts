@@ -21,6 +21,10 @@ export class SettingsService extends BaseComponent {
     return this.HttpClient.post(this.utility.urlApi + '/country' , country);
   }
 
+  getAllTeacher(){
+    return this.HttpClient.get(this.utility.urlApi + '/teachers');
+  }
+
   addTeacher(teacher:any){
     return this.HttpClient.post(this.utility.urlApi + '/auth/register/teacher' , teacher);
   }

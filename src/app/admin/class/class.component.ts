@@ -13,6 +13,7 @@ export class ClassComponent  extends BaseComponent implements OnInit {
   classForm :FormGroup;
   isLoadingOne = false;
   allCourses :any;
+  allTeachers :any;
 
   constructor(
     injector: Injector,
@@ -37,6 +38,7 @@ export class ClassComponent  extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCourses();
+    this.getAllTeachers();
   }
 
   submitForm(form :any){
@@ -61,5 +63,10 @@ export class ClassComponent  extends BaseComponent implements OnInit {
     })
   }
 
+  getAllTeachers(){
+    this.settingsService.getAllTeacher().subscribe(res=>{
+      this.allTeachers = res;
+    })
+  }
 }
 

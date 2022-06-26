@@ -25,16 +25,12 @@
                     <nz-form-label
                         [nzSm]="6"
                         [nzXs]="24"
-                        nzFor="ubjects"
+                        nzFor="subjects"
                         nzRequired>
                         <span>Subjects</span>
                     </nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
-                        input your Subjects!">
-                        <nz-select formControlName="subjects">
-                            <nz-option nzLabel="Arabic" [nzValue]="'Arabic'"></nz-option>
-                            <nz-option nzLabel="Math" [nzValue]="'Math'"></nz-option>
-                        </nz-select>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your Subjects!">
+                        <input nz-input id="subjects" formControlName="subjects" />
                     </nz-form-control>
                 </nz-form-item>
 
@@ -49,8 +45,7 @@
                     <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please
                         select your Teacher!">
                         <nz-select formControlName="teacherId">
-                            <nz-option nzLabel="Arabic" [nzValue]="'67dc9011-3455-4c8c-a998-2407d8054246'"></nz-option>
-                            <!-- <nz-option nzLabel="Math" [nzValue]="'556aa31a-d009-4de4-a7b5-910de10bea30'"></nz-option> -->
+                            <nz-option *ngFor="let teacher of allTeachers" [nzLabel]="teacher?.firstName + ' ' + teacher?.lastName" [nzValue]="teacher?.id"></nz-option>
                         </nz-select>
                     </nz-form-control>
                 </nz-form-item>

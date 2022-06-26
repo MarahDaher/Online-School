@@ -31,14 +31,12 @@ export class LessonsComponent extends BaseComponent implements OnInit {
   getAllCourses(){
     this.settingsService.getAllCourses().subscribe(res=>{
       this.allCourses = res;
-      console.log(this.allCourses);
     })
   }
 
   getAllCoursesByTeacher(id:any){
     this.settingsService.getAllCoursesByTeacher(id).subscribe(res=>{
       this.allCourses = res;
-      console.log(this.allCourses);
     })
   }
 

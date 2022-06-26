@@ -34,6 +34,20 @@
                     </nz-form-control>
                   </nz-form-item>
 
+                  <nz-form-item>
+                    <nz-form-label
+                      [nzSm]="6"
+                      [nzXs]="24"
+                      nzFor="extraDescription"
+                      nzRequired
+                    >
+                      <span>Extra Description</span>
+                    </nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your extra description!">
+                      <textarea rows="4" nz-input formControlName="extraDescription"></textarea>
+                    </nz-form-control>
+                  </nz-form-item>
+
                   <nz-form-item nz-row class="register-area text-end w-75">
                     <nz-form-control>
                       <button nz-button nzType="primary" class="ml-3" [nzLoading]="isLoadingOne" [disabled]="!courseForm.valid">Add Course</button>

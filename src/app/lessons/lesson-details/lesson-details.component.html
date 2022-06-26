@@ -220,13 +220,11 @@
             <div class="col-lg-6 col-md-12">
                 <div class="class-description">
                     <h1>
-                        اللغـــة العربيــــة
+                        {{allClasses[0]?.course?.name}}
                     </h1>
-                    <h3 class="mt-4">
-                        لغـــةٌ إذا وقَعَـــت على أسماعنا كانت لنا برداً على الأكبـــاد
-                    </h3>
-
-                    <h3 class="text-center mt-4">إنهــا لغــةُ الضــاد اللغــةُ العربيّــة</h3>
+                    <h5 class="mt-4" style="line-height: 50px;">
+                        {{allClasses[0]?.course?.description}}
+                    </h5>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -253,7 +251,7 @@
                                             </div>
                                             <div class="facilities-content ">
                                                 <h3 class="number">
-                                                    <h3>{{class?.name}} :</h3>
+                                                    <h3>{{class?.name}} : {{class?.subjects}}</h3>
                                                 </h3>
                                             </div>
                                         </div>
@@ -296,9 +294,8 @@
 
         <div class="row my-5">
             <div class="col-md-12 mt-5">
-                <h3 class="text-center">سيتخلل هذه المراحل فقرات يعرض فيها أناشيــد عن اللغــة العربيـــة أو فقرات مسرحيــة تعلم حروف اللغة أو غيرها من دروس اللغة</h3>
-                <h3 class="text-center my-5">
-                    أتمنى منكــم المتابعة لنحصل على جيل متقنٍ للغة الأجداد و الاباء فهم خير خَلــف لخير سلــف.
+                <h3 class="text-center" style="line-height: 50px;">
+                    {{allClasses[0]?.course?.extraDescription}}  
                 </h3>
             </div>
         </div>

@@ -56,9 +56,7 @@ export class LessonDetailsComponent extends BaseComponent implements OnInit {
     });
 
     modal.afterClose.subscribe(result => {
-      if (result) {
-        console.log(result);
-        
+      if (result) {        
       }
     });
   }
